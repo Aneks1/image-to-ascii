@@ -1,4 +1,5 @@
 # TODO
 
 - Download doesn't work
-- Upload to GH to test
+- Add icon
+- Mobile compatibility
