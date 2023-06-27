@@ -1,34 +1,21 @@
- 
-    <!-- HTML -->
-
 <template>
-    <br>
-    <br>
-    <h1>Image to ASCII Converter</h1>
-    <div id="main">
-        <div id="inputCss">
-            <label for="input">
-                <input id="input" type="file" name="file" accept="image/*" @change="fileUploaded">
-                <div id="fakeBtn">Upload File</div>
-            </label>
-            <span id="fileName">{{ fileName }}</span>
-        </div>
-        <div id="btns">
-            <button @click="convert()">Convert</button>
-            <button @click="download()" id="download">Download</button>
+    <div id="container">
+        <h1 class="relative">Image to ASCII Converter</h1>
+            <div id="inputCss" class="relative">
+                <label for="input">
+                    <input id="input" type="file" name="file" accept="image/*" @change="fileUploaded">
+                    <div id="fakeBtn">Upload File</div>
+                </label>
+                <span id="fileName">{{ fileName }}</span>
+            </div>
+            <div id="btns" class="relative">
+                <button @click="convert()">Convert</button>
+                <button @click="download()">Download</button>
+            </div>
+        <div id="art" class="relative">
+            <pre>{{ art }}</pre>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div id="art">
-        <pre>{{ art }}</pre>
-    </div>
-    <br>
-    <br>
-    <br>
 </template>
 
     <!-- Code -->
@@ -141,114 +128,7 @@ export default defineComponent({
     }
 })
 </script>
-
-    <!-- Cool CSS -->
-
-<style scoped>
-pre {
-    font-family: 'Courier New', Courier, monospace;
-    line-height: 3px;
-    font-size: 5px;
-    background-color: white;
-    color: black;
-}
-h1 {
-    text-align: center;
-    font-size: 5vw;
-}
-#inputCss {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    height: 5vh;
-    border-radius: 15px;
-    background-color: rgb(16, 16, 16);
-}
-label {
-    cursor: pointer;
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    gap: 2vw;
-}
-#download {
-    background-color: rgb(0, 208, 255);
-}
-#download:hover {
-    background-color: rgb(0, 138, 169);
-}
-#fileName {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    padding-left: 10vw;
-    padding-right: 10vw;
-}
-#btns {
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: fit-content;
-    gap: 1vw;
-}
-#fakeBtn {
-    background-color: rgb(230, 176, 82);
-    color: black;
-    height: 100%;
-    border-radius: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    width: 7rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-#fakeBtn:hover {
-    background-color: rgb(186, 138, 72);
-}
-input {
-    display: none;
-}
-button {
-    height: 100%;
-    width: 6rem;
-    border-radius: 15px;
-    border: none;
-    background-color: rgb(82, 230, 82);
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-button:hover {
-    background-color: rgb(56, 155, 56); 
-}
-#main {
-    flex-wrap: wrap;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 5vh;
-    gap: 2vw;
-}
-#art {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    height: fit-content;
-    width: 100%;
-}
+    
+<style>
+    @import url("./styles.css");
 </style>
